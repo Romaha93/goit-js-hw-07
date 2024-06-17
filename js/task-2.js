@@ -1,3 +1,5 @@
+'use strict';
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -24,3 +26,31 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const list = document.querySelector(".gallery");
+console.log(list)
+
+function createImages(arr) {
+  
+  const addImage = arr.map((url, alt) => {
+    
+    const liEl = document.createElement("li");
+    const imgEl = document.createElement("img");
+
+    imgEl.src = url;
+    imgEl.alt = alt;
+    imgEl.style.width = "300px";
+
+    liEl.append(imgEl);
+
+    return liEl;
+  
+  });
+
+ 
+
+ }
+
+createImages(images);
+
+
