@@ -28,28 +28,29 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
-console.log(list)
+console.dir(list)
 
 function createImages(arr) {
   
-  const addImage = arr.map((url, alt) => {
+  const addImage = arr.map(({ url, alt }) => {
     
     const liEl = document.createElement("li");
     const imgEl = document.createElement("img");
 
     imgEl.src = url;
     imgEl.alt = alt;
-    imgEl.style.width = "300px";
+    imgEl.style.width = "300px"
 
     liEl.append(imgEl);
-
     return liEl;
   
   });
 
- 
+  list.append(...addImage);
+  
+  console.log(addImage)
+}
 
- }
 
 createImages(images);
 
