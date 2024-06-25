@@ -26,32 +26,43 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+ 
+//* first version 
+// const list = document.querySelector(".gallery");
+
+// function createImages(arr) {
+  
+//   const addImage = arr.map(({ url, alt }) => {
+    
+//     const liEl = document.createElement("li");
+//     const imgEl = document.createElement("img");
+
+//     imgEl.src = url;
+//     imgEl.alt = alt;
+
+//     liEl.append(imgEl);
+//     return liEl;
+  
+//   });
+
+//   list.append(...addImage);
+  
+// }
+
+// createImages(images);
+
+//* second version
 
 const list = document.querySelector(".gallery");
-console.dir(list)
+console.dir(list);
 
-function createImages(arr) {
-  
-  const addImage = arr.map(({ url, alt }) => {
-    
-    const liEl = document.createElement("li");
-    const imgEl = document.createElement("img");
-
-    imgEl.src = url;
-    imgEl.alt = alt;
-    imgEl.style.width = "300px"
-
-    liEl.append(imgEl);
-    return liEl;
-  
-  });
-
-  list.append(...addImage);
-  
-  console.log(addImage)
+function createGalery(arr) {
+  return arr.map(({ url, alt }) => `         
+            <li>
+              <img src="${url}" alt="${alt}">
+            </li>
+`).join('');
 }
 
-
-createImages(images);
-
+list.insertAdjacentHTML("afterbegin", createGalery(images));
 
