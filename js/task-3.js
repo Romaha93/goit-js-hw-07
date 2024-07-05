@@ -15,7 +15,7 @@ function handlerInput(event) {
         
         return getName.textContent = event.currentTarget.value.trim();
         
-    }
+    };
 
 };
 

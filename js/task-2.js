@@ -28,42 +28,41 @@ const images = [
 ];
  
 //* first version 
-const list = document.querySelector(".gallery");
+// const list = document.querySelector(".gallery");
 
-function createImages(arr) {
+// function createImages(arr) {
   
-  const addImage = arr.map(({ url, alt }) => {
+//   const addImage = arr.map(({ url, alt }) => {
     
-    const liEl = document.createElement("li");
-    const imgEl = document.createElement("img");
+//     const liEl = document.createElement("li");
+//     const imgEl = document.createElement("img");
 
-    imgEl.src = url;
-    imgEl.alt = alt;
+//     imgEl.src = url;
+//     imgEl.alt = alt;
 
-    liEl.append(imgEl);
-    return liEl;
+//     liEl.append(imgEl);
+//     return liEl;
   
-  });
+//   });
 
-  list.append(...addImage);
-  console.log(list.append(...addImage))
+//   list.append(...addImage);
+//   console.log(list.append(...addImage))
   
-}
+// }
 
-createImages(images);
+// createImages(images);
 
 // //* second version
 
-// const list = document.querySelector(".gallery");
-// console.dir(list);
+const list = document.querySelector(".gallery");
 
-// function createGalery(arr) {
-//   return arr.map(({ url, alt }) => `         
-//             <li>
-//               <img src="${url}" alt="${alt}">
-//             </li>
-// `).join('');
-// }
+function createGalery(arr) {
+  return arr.map(({ url, alt }) => `         
+            <li>
+              <img src="${url}" alt="${alt}">
+            </li>
+`).join('');
+}
 
-// list.insertAdjacentHTML("afterbegin", createGalery(images));
+list.insertAdjacentHTML("afterbegin", createGalery(images));
 

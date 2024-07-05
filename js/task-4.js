@@ -9,7 +9,7 @@ function hendlerLogin(event) {
     event.preventDefault();
 
     const { email, password } = event.currentTarget.elements;
-
+    
     const dataForm = {
         
         email: email.value.trim(),
