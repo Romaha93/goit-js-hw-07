@@ -5,16 +5,15 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 };
-
+const bodyColor = document.querySelector('body')
 const changeBtn = document.querySelector('.change-color');
 const valueColor = document.querySelector('.color');
-const boxColor = document.querySelector('.widget');
 
 changeBtn.addEventListener('click', hendlerClick);
 
 function hendlerClick() {
-  boxColor.style.backgroundColor = `${getRandomHexColor()}`;
-  valueColor.textContent =  boxColor.style.backgroundColor;
+  bodyColor.style.backgroundColor = `${getRandomHexColor()}`;
+  valueColor.textContent =  bodyColor.style.backgroundColor;
 };
 
 

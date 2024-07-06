@@ -18,10 +18,10 @@ function createBoxes(amount) {
   for (let index = 0; index < amount; index++) {
     
     const addBox = document.createElement('div');
-    sizeBox += 10;
     addBox.style.width = `${sizeBox}px`;
     addBox.style.height = `${sizeBox}px`;
     addBox.style.backgroundColor = getRandomHexColor();
+    sizeBox += 10;
     amountBoxes.push(addBox);
   
   };
@@ -48,11 +48,14 @@ function hendlerClick() {
   };
 };
 
-destroyBtn.addEventListener('click', () => 
-  
-  containerBoxes.innerHTML = ''
+destroyBtn.addEventListener('click', destroyBoxes);
 
-);
+function destroyBoxes() {
+
+  containerBoxes.innerHTML = ''
+  inputValue.value = '';
+
+}
 
 
 
